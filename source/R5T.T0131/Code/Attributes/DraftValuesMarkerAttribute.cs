@@ -1,5 +1,7 @@
 ﻿using System;
 
+using R5T.T0143;
+
 
 namespace R5T.T0131
 {
@@ -9,7 +11,9 @@ namespace R5T.T0131
     /// The marker attribute is useful for surveying draft values classes and building a catalogue of draft values as a kind of TODO list.
     /// </summary>
     [AttributeUsage(AttributeTargets.Interface, AllowMultiple = false, Inherited = false)]
-    public class DraftValuesMarkerAttribute : Attribute
+    [MarkerAttributeMarker]
+    public class DraftValuesMarkerAttribute : Attribute,
+        IMarkerAttributeMarker
     {
         private readonly bool zIsValues;
         /// <summary>

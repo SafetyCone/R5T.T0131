@@ -1,5 +1,7 @@
 ﻿using System;
 
+using R5T.T0143;
+
 
 namespace R5T.T0131
 {
@@ -10,7 +12,9 @@ namespace R5T.T0131
     /// </summary>
     //[Obsolete]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    public class ConstantsMarkerAttribute : Attribute
+    [MarkerAttributeMarker]
+    public class ConstantsMarkerAttribute : Attribute,
+        IMarkerAttributeMarker
     {
         private readonly bool zIsConstants;
         /// <summary>

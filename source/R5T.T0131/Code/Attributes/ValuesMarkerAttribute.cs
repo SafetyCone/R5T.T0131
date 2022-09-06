@@ -1,5 +1,7 @@
 ﻿using System;
 
+using R5T.T0143;
+
 
 namespace R5T.T0131
 {
@@ -10,7 +12,9 @@ namespace R5T.T0131
     /// The marker attribute is useful for surveying values classes and building a catalogue of values.
     /// </summary>
     [AttributeUsage(AttributeTargets.Interface, AllowMultiple = false, Inherited = false)]
-    public class ValuesMarkerAttribute : Attribute
+    [MarkerAttributeMarker]
+    public class ValuesMarkerAttribute : Attribute,
+        IMarkerAttributeMarker
     {
         private readonly bool zIsValues;
         /// <summary>
